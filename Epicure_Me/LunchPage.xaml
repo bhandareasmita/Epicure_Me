@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epicure_Me.LunchPage"
+			 xmlns:local="clr-namespace:Epicure_Me">
+	<ContentPage.Content>
+		<StackLayout>
+			<StackLayout Orientation="Horizontal" BackgroundColor="Gray" HeightRequest="60">
+			<!-- Back button -->
+				<Grid>
+					<Button x:Name="Button_Back" Text="Back" Clicked="OnBackButtonClicked"/>
+				</Grid>
+
+			<!-- Screen name -->
+				<Label Text="Recipes" FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			</StackLayout>
+		<!-- List of recipes using CollectionView -->
+			<CollectionView ItemsSource="{Binding LunchRecipes}" BackgroundColor="Wheat" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
+				
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<StackLayout Orientation="Horizontal">
+							<Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="100" />
+							<StackLayout>
+								<Label Text="{Binding Title}" FontSize="16" />
+								<Label FontSize="16">
+									<Label.FormattedText>
+										<FormattedString>
+											<Span Text="Health Rating: " FontSize="14" />
+											<Span Text="{Binding HealthScore}" FontSize="14" />
+										</FormattedString>
+									</Label.FormattedText>
+								</Label>
+								
+							</StackLayout>
+						</StackLayout>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+				
+			</CollectionView>
+			
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
+
+
+
+
+
+

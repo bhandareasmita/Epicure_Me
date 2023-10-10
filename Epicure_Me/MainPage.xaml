@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epicure_Me.MainPage"
+			 xmlns:local="clr-namespace:Epicure_Me">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<!-- Top Header -->
+		<StackLayout Grid.Row="0" VerticalOptions="Start" BackgroundColor="Orange" HeightRequest="80">
+			<!--<Image Source="header1.jfif"  HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />-->
+		<Label Text="Epicure Me" HorizontalOptions="CenterAndExpand" FontSize="24" VerticalTextAlignment="Center"/>
+		</StackLayout>
+
+		<!-- Middle Section (2x2 Grid) -->
+		<ScrollView Grid.Row="1">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<!-- Cell 1 -->
+				<Grid Grid.Row="0" Grid.Column="0">
+					<Image Source="breakfast.jpg" Aspect="AspectFill" />
+					<Label Grid.Row="0" Grid.Column="0" Text="Breakfast" 
+				   VerticalOptions="EndAndExpand" HorizontalOptions="Center" 
+				   FontSize="25" TextColor="Black" 
+				   Background="orange">
+
+					</Label>
+				</Grid>
+
+				<!-- Cell 2 -->
+				<Grid Grid.Row="0" Grid.Column="1">
+					<Image x:Name="Lunch" Source="lunch.jpg" Aspect="AspectFill">
+						<Image.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnLunchTapped"/>
+						</Image.GestureRecognizers>
+					</Image>
+					<Label Grid.Row="0" Grid.Column="0" Text="Lunch" 
+				   VerticalOptions="EndAndExpand" HorizontalOptions="Center" 
+				   FontSize="25" TextColor="Black" 
+				   Background="orange">
+
+					</Label>
+				</Grid>
+
+				<!-- Cell 3 -->
+				<Grid Grid.Row="1" Grid.Column="0">
+					<Image Source="dinner.jpg" Aspect="AspectFill" />
+					<Label Grid.Row="0" Grid.Column="0" Text="Dinner" 
+						   VerticalOptions="EndAndExpand" HorizontalOptions="Center" 
+						   FontSize="25" TextColor="Black" 
+						   Background="orange">
+						
+					</Label>
+				</Grid>
+
+				<!-- Cell 4 -->
+				<Grid Grid.Row="1" Grid.Column="1">
+					<Image Source="dessert.jpg" Aspect="AspectFill" />
+					<Label Grid.Row="0" Grid.Column="0" Text="Desert" 
+				   VerticalOptions="EndAndExpand" HorizontalOptions="Center" 
+				   FontSize="25" TextColor="Black" 
+				   Background="orange">
+
+					</Label>
+				</Grid>
+			</Grid>
+		</ScrollView>
+
+		<!-- Bottom Section (Bottom Tabs) -->
+		
+		
+	</Grid>
+
+</ContentPage>

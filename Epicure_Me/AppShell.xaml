@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Epicure_Me.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Epicure_Me"
+    Shell.FlyoutBehavior="Flyout">
+
+	
+	<TabBar x:Name="TabBar">
+		<Tab Title="Home" Icon="dotnet_bot.svg" >
+			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+		</Tab>
+		<Tab Title="Favourite" Icon="back_icon.svg">
+			<ShellContent ContentTemplate="{DataTemplate local:LunchPage}" Route="FavouritePage"/>
+		</Tab>
+		<Tab Title="Search" Icon="search.jpg">
+			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="SearchPage"/>
+		</Tab>
+		<Tab Title="Profile" Icon="profile.jpg">
+			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="ProfilePage"/>
+		</Tab>
+	</TabBar>
+	
+	<ShellContent Title="Lunch" Route="LunchPage">
+		<ShellContent.ContentTemplate>
+			<DataTemplate>
+				<local:LunchPage />
+			</DataTemplate>
+		</ShellContent.ContentTemplate>
+	</ShellContent>
+	
+	<ShellContent Route="RecipeDetailPage"
+          ContentTemplate="{DataTemplate local:RecipeDetailPage}" />
+
+
+
+</Shell>
