@@ -99,9 +99,9 @@ namespace Epicure_Me
 				// Populate the LunchRecipes ObservableCollection with the retrieved recipes
 				if (breakfastRecipes != null)
 				{
-					foreach (Recipe lunchRecipe in breakfastRecipes)
+					foreach (Recipe recipe in breakfastRecipes)
 					{
-						LunchRecipes.Add(lunchRecipe);
+						LunchRecipes.Add(recipe);
 					}
 				}
 			}
@@ -175,15 +175,15 @@ namespace Epicure_Me
 				RecipeApiClient recipeApiClient = new RecipeApiClient();
 
 				// Make an API call to fetch lunch recipes (this call can be asynchronous)
-				List<Recipe> dinnerRecipes = await recipeApiClient.GetRecipesAsync("dinner");
+				List<Recipe> dessertRecipes = await recipeApiClient.GetRecipesAsync("dinner");
 
 				// Check the API response
-				Console.WriteLine("API Response: " + JsonConvert.SerializeObject(dinnerRecipes));
+				Console.WriteLine("API Response: " + JsonConvert.SerializeObject(dessertRecipes));
 
 				// Populate the LunchRecipes ObservableCollection with the retrieved recipes
-				if (dinnerRecipes != null)
+				if (dessertRecipes != null)
 				{
-					foreach (Recipe lunchRecipe in dinnerRecipes)
+					foreach (Recipe lunchRecipe in dessertRecipes)
 					{
 						LunchRecipes.Add(lunchRecipe);
 					}

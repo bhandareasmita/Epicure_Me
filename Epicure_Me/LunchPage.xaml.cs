@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Epicure_Me;
 
-public partial class LunchPage :ContentPage
+public partial class LunchPage : ContentPage
 
 {
 	public LunchPage()
@@ -11,7 +11,7 @@ public partial class LunchPage :ContentPage
 		InitializeComponent();
 		LoadLunchRecipes();
 	}
-	
+
 
 	private async void OnBackButtonClicked(object sender, EventArgs e)
 	{
@@ -24,7 +24,7 @@ public partial class LunchPage :ContentPage
 		await viewModel.LoadLunchRecipes();
 	}
 	private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-	 {
+	{
 		try
 		{
 			if (e.CurrentSelection.FirstOrDefault() is Recipe selectedRecipe)
@@ -38,4 +38,14 @@ public partial class LunchPage :ContentPage
 			Console.WriteLine("Navigation Error: " + ex.Message);
 		}
 	}
+	private void OnHeartImageTapped(object sender, EventArgs e)
+	{
+		if (sender is Image image && image.BindingContext is Recipe recipe)
+		{
+			recipe.IsFavorite = !recipe.IsFavorite;
+			
+		}
+		
+	}
 }
+	

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epicure_Me.BreakfastPage"
+             Title="NewPage1">
+	<StackLayout>
+		<HorizontalStackLayout>
+			<Grid>
+				<Button x:Name="Button_Back" Text="Back" Clicked="Button_Back_Clicked"/>
+			</Grid>
+			<Label Text="Breakfast" FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+		</HorizontalStackLayout>
+		<CollectionView ItemsSource="{Binding LunchRecipes}" SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged">
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<StackLayout>
+						<Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="150" />
+						<Label Text="{Binding Title}" FontSize="20" HorizontalOptions="CenterAndExpand" Padding="10"/>
+						<!-- Other recipe details go here -->
+					</StackLayout>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+
+	</StackLayout>
+	
+    
+</ContentPage>

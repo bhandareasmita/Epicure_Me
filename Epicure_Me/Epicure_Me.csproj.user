@@ -29,6 +29,9 @@
     <MauiXaml Update="DetailRecipe.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="BreakfastPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Platforms\Windows\App.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

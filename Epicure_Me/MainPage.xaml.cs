@@ -14,5 +14,10 @@
 		{
 			await Shell.Current.GoToAsync("//LunchPage");
 		}
+
+		private async void OnBreakfastTapped(object sender, TappedEventArgs e)
+		{
+			await Shell.Current.GoToAsync("//BreakfastPage");
+		}
 	}
 }

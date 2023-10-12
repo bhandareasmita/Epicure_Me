@@ -33,7 +33,7 @@ public partial class RecipeDetailPage : ContentPage
 
 	private async void OnButton_Back_Clicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//LunchPage");
+		await Shell.Current.Navigation.PopAsync();
 	}
 
 	private void Ingredients_TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
@@ -51,5 +51,14 @@ public partial class RecipeDetailPage : ContentPage
 	private async void Button_Back_Clicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync("//LunchPage");
+	}
+
+	private void Btn_Heart_Clicked(object sender, EventArgs e)
+	{
+		if (sender is ImageButton button && button.CommandParameter is Recipe recipe)
+		{
+			FavouritesViewModel viewModel = new FavouritesViewModel();
+			viewModel.AddToFavourites(recipe);
+		}
 	}
 }

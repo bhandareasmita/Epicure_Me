@@ -4,9 +4,31 @@
              x:Class="Epicure_Me.SearchPage"
              Title="SearchPage">
     <VerticalStackLayout>
-		<StackLayout Orientation="Horizontal">
-			<Label x:Name="BtnSearch" Text="Search"/>
-			<SearchBar x:Name="SearchBar" Placeholder="Search for Recipes"/>
+		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+			<Button x:Name="Button_Back" Text="Back" Clicked="Button_Back_Clicked" />
+			<SearchBar x:Name="Search_Bar" Placeholder="Search for Recipes" HorizontalOptions="EndAndExpand"/>
+			<Button x:Name="Button_Search" Text="Search" Clicked="Btn_Search_Clicked" />
 		</StackLayout>
+		<CollectionView ItemsSource="{Binding SearchRecipes}">
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<StackLayout Orientation="Horizontal">
+						<Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="100" />
+						<StackLayout>
+							<Label Text="{Binding Title}" FontSize="16" />
+							<Label FontSize="16">
+								<Label.FormattedText>
+									<FormattedString>
+										<Span Text="Health Rating: " FontSize="14" />
+										<Span Text="{Binding HealthScore}" FontSize="14" />
+									</FormattedString>
+								</Label.FormattedText>
+							</Label>
+
+						</StackLayout>
+					</StackLayout>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
 	</VerticalStackLayout>
 </ContentPage>

@@ -19,7 +19,7 @@ namespace Epicure_Me
 			{
 				using (HttpClient client = new HttpClient())
 				{
-					string apiUrl = $"https://api.spoonacular.com/recipes/random?number=4&tags={mealType}&apiKey={apiKey}";
+					string apiUrl = $"https://api.spoonacular.com/recipes/random?number=1&tags={mealType}&apiKey={apiKey}";
 
 					Debug.WriteLine($"API URL: {apiUrl}");
 
@@ -50,6 +50,39 @@ namespace Epicure_Me
 
 			return new List<Recipe>();
 		}
+
+		public async Task<List<Recipe>> SearchRecipeAsync(string apiQuery)
+		{
+			try
+			{
+				using (HttpClient client = new HttpClient())
+				{
+					string apiUrl = $"https://api.spoonacular.com/recipes/findByIngredients?number=1&ingredients={apiQuery}&apiKey={apiKey}";
+					HttpResponseMessage response = await client.GetAsync(apiUrl);
+					if (response.IsSuccessStatusCode)
+					{
+						string content = await response.Content.ReadAsStringAsync();
+						Debug.WriteLine(content);
+						RecipeApiResponse apiResponse = JsonConvert.DeserializeObject<RecipeApiResponse>(content);
+						if (apiResponse != null)
+						{
+							return apiResponse.Recipes;
+						}
+						else
+						{
+							Debug.WriteLine("API Error: " + response.ReasonPhrase);
+						}
+					}
+				}
+			}
+			catch (Exception ex) 
+			{
+				Debug.WriteLine("API Exception: " + ex.Message);
+			}
+			return new List<Recipe>();
+			
+		}
+
 
 
 	}

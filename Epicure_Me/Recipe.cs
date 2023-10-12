@@ -8,6 +8,19 @@ namespace Epicure_Me
 {
 	public class Recipe
 	{
+		private bool isFavorite;
+		public bool IsFavorite
+		{
+			get { return isFavorite; }
+			set
+			{
+				if (isFavorite != value)
+				{
+					isFavorite = value;
+					// You can also trigger property changed event here if needed
+				}
+			}
+		}
 		public int Id { get; set; }
 		public string Title { get; set; }
 		public string Image { get; set; }
@@ -119,4 +132,8 @@ namespace Epicure_Me
 
 
 	}
+	
+	
+	
+	
 }

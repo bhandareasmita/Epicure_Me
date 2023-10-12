@@ -31,7 +31,19 @@
 										</FormattedString>
 									</Label.FormattedText>
 								</Label>
-								
+								<Image x:Name="HeartImage" HeightRequest="30">
+									<Image.Triggers>
+										<DataTrigger TargetType="Image" Binding="{Binding IsFavorite}" Value="true">
+											<Setter Property="Source" Value="heart_regular.svg"/>
+										</DataTrigger>
+										<DataTrigger TargetType="Image" Binding="{Binding IsFavorite}" Value="false">
+											<Setter Property="Source" Value="heart_filled.svg" />
+										</DataTrigger>
+									</Image.Triggers>
+									<Image.GestureRecognizers>
+										<TapGestureRecognizer Tapped="OnHeartImageTapped" CommandParameter="{Binding}" />
+									</Image.GestureRecognizers>
+								</Image>
 							</StackLayout>
 						</StackLayout>
 					</DataTemplate>

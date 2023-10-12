@@ -12,16 +12,22 @@
 			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
 		</Tab>
 		<Tab Title="Favourite" Icon="back_icon.svg">
-			<ShellContent ContentTemplate="{DataTemplate local:LunchPage}" Route="FavouritePage"/>
+			<ShellContent ContentTemplate="{DataTemplate local:FavouritesPage}" Route="FavouritesPage"/>
 		</Tab>
 		<Tab Title="Search" Icon="search.jpg">
-			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="SearchPage"/>
+			<ShellContent ContentTemplate="{DataTemplate local:SearchPage}" Route="SearchPage"/>
 		</Tab>
 		<Tab Title="Profile" Icon="profile.jpg">
-			<ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="ProfilePage"/>
+			<ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" Route="ProfilePage"/>
 		</Tab>
 	</TabBar>
-	
+	<ShellContent Title="Breakfast" Route="BreakfastPage">
+		<ShellContent.ContentTemplate>
+			<DataTemplate>
+				<local:BreakfastPage />
+			</DataTemplate>
+		</ShellContent.ContentTemplate>
+	</ShellContent>
 	<ShellContent Title="Lunch" Route="LunchPage">
 		<ShellContent.ContentTemplate>
 			<DataTemplate>
@@ -32,6 +38,9 @@
 	
 	<ShellContent Route="RecipeDetailPage"
           ContentTemplate="{DataTemplate local:RecipeDetailPage}" />
+
+	
+
 
 
 

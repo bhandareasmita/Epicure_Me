@@ -55,6 +55,10 @@
 	  <None Remove="Resources\Images\dinner.jpg" />
 	  <None Remove="Resources\Images\favourite.jpg" />
 	  <None Remove="Resources\Images\header1.jfif" />
+	  <None Remove="Resources\Images\heart.png" />
+	  <None Remove="Resources\Images\heart_filled.svg" />
+	  <None Remove="Resources\Images\heart_regular.svg" />
+	  <None Remove="Resources\Images\heart_solid.svg" />
 	  <None Remove="Resources\Images\home.jpg" />
 	  <None Remove="Resources\Images\home1.png" />
 	  <None Remove="Resources\Images\lunch.jpg" />
@@ -71,6 +75,9 @@
 	  <Compile Update="DetailRecipe.xaml.cs">
 	    <DependentUpon>DetailRecipe.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="BreakfastPage.xaml.cs">
+	    <DependentUpon>BreakfastPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,6 +91,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="DetailRecipe.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="BreakfastPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ProfilePage.xaml">

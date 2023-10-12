@@ -8,7 +8,10 @@
 		
 		<!-- Recipe Image -->
 		<StackLayout BackgroundColor="PaleGoldenrod">
-			<Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="150" />
+			<HorizontalStackLayout>
+				<Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="150" />
+				<ImageButton x:Name="Btn_Heart" Source="dotnet_bot.svg" HeightRequest="30" WidthRequest="30" Clicked="Btn_Heart_Clicked" CommandParameter="{Binding .}"/>
+			</HorizontalStackLayout>
 			<Label Text="{Binding Title}" FontSize="20" HorizontalOptions="CenterAndExpand" Padding="10"/>
 		</StackLayout>
 		<!-- Recipe Title -->
@@ -100,6 +103,6 @@
 			</Grid>
 		</Grid>
 		
-	</StackLayout>
+	</StackLayout> 
 
 </ContentPage>
